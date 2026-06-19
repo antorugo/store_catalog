@@ -1,0 +1,241 @@
+:root {
+    --dark-color: #5d5852;
+    --navy-color: #1a2e44;
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px); /* Ajusta el alto restando el tamaño del nav */
+    margin-top: 80px;           /* EMPUJA el banner hacia abajo para que el nav no lo tape */
+    overflow: hidden;
+    background-color: #fff;
+}
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el grupo en pantalla */
+    gap: 40px;               /* Distancia entre texto y fotos. Achica este número para acercarlos más */
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* --- Texto --- */
+.slide-text {
+    /* Quitamos el flex: 1 para que no ocupe medio banner y se acerque a la imagen */
+    flex: 0 1 auto; 
+    max-width: 450px;
+}
+
+.slide-text .subtitle {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.slide-text .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--navy-color);
+    margin: 0 0 15px 0;
+}
+
+.slide-text .description {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-whatsapp {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #4a4641;
+}
+
+/* --- Imágenes Escalonadas --- */
+.slide-images {
+    flex: 0 0 auto;
+    position: relative;
+    width: 400px; /* Ancho suficiente para las dos fotos */
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-wrapper {
+    border: 3px solid black;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-1 {
+    width: 200px;
+    height: 300px;
+    z-index: 1;
+    margin-right: 20px; /* Ajusta esto para encimar más o menos las fotos */
+    border: 2px solid black;
+}
+
+.item-2 {
+    width: 240px;
+    height: 360px;
+    z-index: 2;
+    transform: translateX(100);
+    border: 2px solid black;
+    box-shadow: 15px 15px 0px rgba(0,0,0,0.05); /* Sombra sutil */
+}
+
+/* --- Flechas --- */
+/* Agrega o revisa esto en tu CSS */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100; /* Super importante */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+/* --- Puntos --- */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #000;
+    border: 1px solid #000;
+    outline: 2px solid #fff; /* Efecto de círculo abierto en la imagen */
+}
+/* ============================================
+   RESPONSIVE — Banner Slider
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* El slide pasa a columna: imagen arriba, texto abajo */
+  .slide {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 16px 80px; /* padding-bottom deja espacio a las flechas */
+    gap: 20px;
+    overflow: hidden;
+  }
+.banner-slider {
+    height: auto;
+    min-height: 0;
+  }
+  .slider-track {
+    height: auto;
+  }
+  /* Orden: imagen primero, texto después */
+  .slide-images { order: 1; }
+  .slide-text   { order: 2; }
+
+  /* Imágenes: simplificamos el escalonado para mobile */
+  .slide-images {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    position: static; /* sacamos el position relative */
+  }
+
+  .item-1,
+  .item-2 {
+    position: static; /* importante: quitamos el posicionamiento absoluto implícito */
+  }
+
+  .item-1 {
+    width: 110px;
+    height: 155px;
+    margin-right: 0;
+    align-self: flex-end;
+    margin-bottom: 20px; /* escalonado vertical suave */
+  }
+
+  .item-2 {
+    width: 130px;
+    height: 185px;
+    transform: none; /* resetea el translateX del desktop */
+    box-shadow: none;
+  }
+
+  /* Texto centrado */
+  .slide-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .slide-text .title  { font-size: 2rem; }
+  .slide-text .description { font-size: 1.1rem; }
+
+  /* Flechas: las bajamos al fondo del banner, fuera del contenido */
+  .nav-btn {
+    top: 210px;    /* ← pegado a las imágenes (que miden ~200px) */
+    bottom: auto;
+    transform: translateY(0);
+  }
+
+  .prev { left: 5%; }
+  .next { right: 5%; }
+
+  /* Puntos: suben un poco para no chocar con las flechas */
+  .dots {
+    position: absolute;
+    top: auto;
+    bottom: 10px;   /* ← pegado abajo del contenido real */
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-text .title { font-size: 1.6rem; }
+  .item-1 { width: 90px; height: 130px; }
+  .item-2 { width: 110px; height: 160px; }
+}

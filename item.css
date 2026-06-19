@@ -1,0 +1,161 @@
+/* --- SECCIÓN OFERTAS --- */
+.ofertas-seccion {
+    position: relative;
+    padding: 60px 20px 0 20px;
+    background-color: #fff;
+    clear: both;
+    display: block;
+    min-height: 100vh;             /* ← esto */
+}
+
+/* Título de Ofertas (Pestaña) */
+.ofertas-titulo h3 {
+    background-color: #6d6257;
+    color: white;
+    display: inline-block;
+    padding: 12px 50px;
+    border-radius: 0 50px 50px 0;
+    margin-left: -20px;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+/* Contenedor Flex */
+.ofertas-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 60px; /* el espacio inferior va acá */
+}
+
+/* Card del Producto */
+.producto-card {
+    text-align: center;
+    width: 200px;
+}
+
+/* Recuadro de Imagen */
+.img-placeholder {
+    border: 2px solid #000;
+    height: 280px;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Textos */
+.producto-card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.producto-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Botón */
+.producto-card .btn-whatsapp {
+    background-color: #1e5f48;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* --- BARRA DECORATIVA INFERIOR DE OFERTAS --- */
+.ofertas-barra {
+    width: 100%;
+    height: 120px;
+    background-color: #6d6257;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+    overflow: hidden;              /* recorta el texto que sale del borde */
+    display: flex;
+    align-items: center;
+}
+
+.barra-texto-scroll {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: scrollTexto 12s linear infinite;
+}
+
+.barra-texto-scroll span {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color:white; /* texto fantasma, se ve sutil */
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+@keyframes scrollTexto {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* --- CÍRCULOS DE COLORES --- */
+.color-dots {
+    position: absolute;
+    right: -35px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.color-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #ccc;
+    cursor: default;
+    transition: transform 0.15s ease;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+}
+
+/* ── Colores disponibles ─────────────────────────────────── */
+.color-dot.white   { background-color: #ffffff; }
+.color-dot.black   { background-color: #1a1a1a; }
+.color-dot.navy    { background-color: #1a2e44; }
+.color-dot.brown   { background-color: #5d5852; }
+.color-dot.red     { background-color: #c0392b; }
+.color-dot.green   { background-color: #27ae60; }
+.color-dot.pink    { background-color: #e8a0bf; }
+.color-dot.gray    { background-color: #95a5a6; }
+.color-dot.beige   { background-color: #d4b896; }
+.color-dot.yellow  { background-color: #f1c40f; }
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .ofertas-container {
+        gap: 30px;
+    }
+    .color-dots {
+        right: 10px;
+    }
+}

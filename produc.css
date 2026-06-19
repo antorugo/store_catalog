@@ -1,0 +1,136 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.productos-seccion {
+    display: flex;
+    gap: 40px;
+    padding: 40px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: flex-start;
+    scroll-margin-top: 70px; /* ← ajustá este número a la altura de tu navbar */
+}
+
+/* --- BARRA LATERAL DE FILTROS --- */
+.filtros-sidebar {
+    width: 250px;
+    flex-shrink: 0; /* Evita que se encoja */
+    background-color: #fcfcfc;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    position: sticky;
+    top: 20px; /* Se queda pegado al hacer scroll */
+}
+
+.filtro-grupo {
+    margin-bottom: 25px;
+}
+
+.filtro-grupo h4 {
+    font-size: 1rem;
+    color: #6d6257;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.filtro-grupo label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #444;
+}
+
+/* Buscador */
+#search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+
+}
+
+/* Botón Aplicar */
+.btn-aplicar {
+    width: 100%;
+    background-color: #6d6257;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-aplicar:hover {
+    background-color: #554b42;
+}
+
+/* --- GRILLA DE PRODUCTOS --- */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
+/* --- REUTILIZANDO TUS ESTILOS DE "OFERTAS" --- */
+.producto-card {
+    text-align: center;
+}
+
+.img-placeholder {
+    border: 1px solid #ddd;
+    height: 280px;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto-card h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.producto-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-whatsapp {
+    background-color: #1e5f48;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .productos-seccion {
+        flex-direction: column; /* Filtros arriba, productos abajo */
+    }
+
+    .filtros-sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+        gap: 20px;
+    }
+}

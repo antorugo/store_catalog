@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "nombre": "Remera básica de tiras",
+    "precio": 8500,
+    "imagen": "img/basica_remera_tiras.jpg",
+    "categoria": "remeras",
+    "color": "blanco",
+    "colores": ["blanco", "negro", "marron"],
+    "seccion": "oferta"
+  },
+  {
+    "id": 2,
+    "nombre": "Jean clásico",
+    "precio": 12500,
+    "imagen": "img/women_jean.jpg",
+    "categoria": "jeans",
+    "color": "azul",
+    "colores": ["azul", "negro"],
+    "seccion": "oferta"
+  },
+  {
+    "id": 3,
+    "nombre": "Camisa slim fit",
+    "precio": 15000,
+    "imagen": "img/camisa_blanca.jpg",
+    "categoria": "camisas",
+    "color": "blanco",
+    "colores": ["negro", "blanco"],
+    "seccion": "oferta"
+  },
+  {
+    "id": 4,
+    "nombre": "Polera",
+    "precio": 15000,
+    "imagen": "img/women_polera.jpg",
+    "categoria": "remeras",
+    "color": "negro",
+    "colores": ["negro", "gris"],
+    "seccion": "nueva-coleccion"
+  },
+   {
+    "id": 4,
+    "nombre": "pollera",
+    "precio": 6000,
+    "imagen": "img/pollera_negra.jpg",
+    "categoria": "polleras",
+    "color": "negro",
+    "colores": ["negro", "gris"],
+    "seccion": "nueva-coleccion"
+  },
+  {
+    "id": 5,
+    "nombre": "Remera de lino",
+    "precio": 6500,
+    "imagen": "img/remera_gris.jpg",
+    "categoria": "remeras",
+    "color": "gris",
+    "colores": ["gris"],
+    "seccion": "ambas"
+  },
+{
+    "id": 6,
+    "nombre": "Remera de lino",
+    "precio": 6500,
+    "imagen": "img/remera_lino_gris.jpg",
+    "categoria": "remeras",
+    "color": "gris",
+    "colores": ["gris","blanco"],
+    "seccion": "nueva-coleccion"
+  }
+]

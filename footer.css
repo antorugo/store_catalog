@@ -1,0 +1,99 @@
+/* --- FOOTER GENERAL --- */
+.main-footer {
+    background-color: #1a1a1a; /* Un tono más oscuro para que resalte el blanco */
+    color: white;
+    padding: 60px 20px 20px 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Títulos en BLANCO */
+.footer-column h4 {
+    color: #ffffff; /* Color blanco para los nombres */
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.footer-column h4::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #6d6257; /* Un detalle en el marrón de tu marca */
+    margin-top: 8px;
+}
+
+/* Listas Verticales */
+.footer-vertical-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-vertical-links li {
+    margin-bottom: 15px;
+}
+
+/* Estilo de enlaces y párrafos */
+.footer-column p, 
+.footer-column a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre icono y texto */
+}
+
+/* Iconos */
+.footer-column i {
+    font-size: 1.1rem;
+    width: 20px; /* Ancho fijo para que el texto quede alineado */
+    text-align: center;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+    transform: translateX(5px); /* Efecto sutil al pasar el mouse */
+}
+
+/* Barra inferior */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+}

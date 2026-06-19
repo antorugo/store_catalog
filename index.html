@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="banner.css">
+    <link rel="stylesheet" href="item.css">
+    <link rel="stylesheet" href="produc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Tienda de Ropa</title>
+</head>
+<a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="whatsapp-flotante" aria-label="Contactar por WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<body>
+
+  <nav>
+    <h1 >logo</h1>
+    <div class="links">
+      <a href="#inicio">inicio</a>
+      <a href="#nueva-coleccion">nueva colección</a>
+      <a href="#ofertas">ofertas</a>
+      <a href="#ropa">ropa</a>
+      <a href="#contacto">contacto</a>
+    </div>
+  </nav>
+
+  <!-- BANNER -->
+  <section id="inicio" class="banner-slider">
+    <div class="slider-track">
+
+      <div class="slide">
+        <div class="slide-text">
+          <p class="subtitle">Tu estilo</p>
+          <h2 class="title">TU MOMENTO</h2>
+          <p class="description">Descubrí nuestra nueva colección</p>
+          <a href="#" class="btn-whatsapp">Consultar por WhatsApp</a>
+        </div>
+        <div class="slide-images">
+          <div class="img-wrapper item-1">
+            <img src="img/pexels-aminnaderloei-33091858.jpg" alt="Modelo 1">
+          </div>
+          <div class="img-wrapper item-2">
+            <img src="img/pexels-aminnaderloei-33091855.jpg" alt="Modelo 2">
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-text">
+          <p class="subtitle">¡Atención!</p>
+          <h2 class="title offer-title">OFERTAS</h2>
+          <p class="description">Se acercan promociones con <strong>mucho descuento</strong></p>
+          <a href="#" class="btn-whatsapp">Ver adelantos</a>
+        </div>
+        <div class="slide-images">
+          <div class="img-wrapper item-1">
+            <img src="/img/remera_gris.jpg" alt="Oferta 1">
+          </div>
+          <div class="img-wrapper item-2">
+            <img src="/img/camisa_blanca.jpg" alt="Oferta 2">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="nav-btn prev" type="button">❮</button>
+    <button class="nav-btn next" type="button">❯</button>
+
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- NUEVA COLECCIÓN — las imágenes las inyecta producto.js -->
+  <section id="nueva-coleccion" class="scroll-productos">
+    <h2 class="titulo-seccion">NUEVA COLECCIÓN</h2>
+
+    <div class="capa-fondo-texto">
+      <p>NUEVA COLECCIÓN • NUEVA COLECCIÓN • NUEVA COLECCIÓN</p>
+      <p>NUEVA COLECCIÓN • NUEVA COLECCIÓN • NUEVA COLECCIÓN</p>
+      <p>NUEVA COLECCIÓN • NUEVA COLECCIÓN • NUEVA COLECCIÓN</p>
+      <p>NUEVA COLECCIÓN • NUEVA COLECCIÓN • NUEVA COLECCIÓN</p>
+      <p>NUEVA COLECCIÓN • NUEVA COLECCIÓN • NUEVA COLECCIÓN</p>
+    </div>
+
+    <!-- id para que producto.js inyecte las imágenes -->
+    <div class="contenedor-scroll" id="scroll-nueva-coleccion">
+      <!-- se llena automáticamente desde productos.json -->
+    </div>
+  </section>
+
+  <!-- OFERTAS — las cards las inyecta producto.js -->
+  <section id="ofertas" class="ofertas-seccion">
+    <div class="ofertas-titulo">
+      <h3>Ofertas</h3>
+    </div>
+
+    <!-- id para que producto.js inyecte las cards -->
+    <div class="ofertas-container" id="ofertas-container">
+      <!-- se llena automáticamente desde productos.json -->
+    </div>
+   <div class="ofertas-barra">
+  <div class="barra-texto-scroll">
+    <span>OFERTAS</span><span>OFERTAS</span><span>OFERTAS</span>
+    <span>OFERTAS</span><span>OFERTAS</span><span>OFERTAS</span>
+    <span>OFERTAS</span><span>OFERTAS</span><span>OFERTAS</span>
+    <span>OFERTAS</span><span>OFERTAS</span><span>OFERTAS</span>
+  </div>
+</div>
+  </section>
+
+  <!-- TODOS LOS PRODUCTOS con filtros -->
+  <section id="ropa" class="productos-seccion">
+    <aside class="filtros-sidebar">
+      <div class="filtro-grupo">
+        <input type="text" id="search" placeholder="Buscar productos...">
+      </div>
+
+      <div class="filtro-grupo">
+        <h4>Filtrar por categoría</h4>
+        <label><input type="checkbox" name="categoria" value="remeras"> Remeras</label>
+        <label><input type="checkbox" name="categoria" value="jeans"> Jeans</label>
+        <label><input type="checkbox" name="categoria" value="camisas"> Camisas</label>
+        <label><input type="checkbox" name="categoria" value="polleras"> Polleras</label>
+        <label><input type="checkbox" name="categoria" value="accesorios"> Accesorios</label>
+      </div>
+
+      <div class="filtro-grupo">
+        <h4>Filtrar por color</h4>
+        <label><input type="checkbox" name="color" value="blanco"> Blanco</label>
+        <label><input type="checkbox" name="color" value="negro"> Negro</label>
+        <label><input type="checkbox" name="color" value="azul"> Azul</label>
+      </div>
+
+      <button class="btn-aplicar">Aplicar filtros</button>
+    </aside>
+
+    <div class="productos-grid" id="productos-grid">
+      <!-- se llena automáticamente desde productos.json -->
+    </div>
+  </section>
+
+</body>
+
+<footer id="contacto" class="main-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Contacto</h4>
+      <p><i class="fab fa-whatsapp"></i> <a href="#">+54 9 XXX XXX</a></p>
+      <p><i class="far fa-envelope"></i> <a href="#">tienda@ejemplo.com</a></p>
+    </div>
+    <div class="footer-column">
+      <h4>Seguinos</h4>
+      <ul class="footer-vertical-links">
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+        <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Información</h4>
+      <ul class="footer-vertical-links">
+        <li><a href="#">Políticas de devolución</a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Mi Tienda de Ropa - Tu estilo, tu esencia</p>
+  </div>
+</footer>
+
+<script src="banner.js"></script>
+<script src="producto.js"></script>
+</html>
