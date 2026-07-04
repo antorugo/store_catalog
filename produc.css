@@ -79,14 +79,19 @@
 /* --- REUTILIZANDO TUS ESTILOS DE "OFERTAS" --- */
 .producto-card {
     text-align: center;
+    position: relative;
 }
-
+.productos-grid .producto-card {
+    width: 100%;
+}
 .img-placeholder {
     border: 1px solid #ddd;
     height: 280px;
     width: 100%;
     margin-bottom: 15px;
     background-color: #f9f9f9;
+    position: relative;
+     overflow: hidden;
 }
 
 .img-placeholder img {
@@ -116,7 +121,16 @@
     cursor: pointer;
     font-size: 0.85rem;
 }
+.productos-grid .color-dots {
+    right: 10px;
+    top: 10px;
+    gap: 8px;
+}
 
+.productos-grid .color-dot {
+    width: 18px;
+    height: 18px;
+}
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .productos-seccion {
@@ -132,5 +146,12 @@
     .productos-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
         gap: 20px;
+    }
+  
+}
+
+@media (max-width: 480px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr); /* vuelve a 2 en pantallas muy chicas */
     }
 }

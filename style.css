@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:500');
 /* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 .whatsapp-flotante {
     position: fixed;
     bottom: 30px;
@@ -27,6 +30,7 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 nav {
+  box-sizing: border-box;
     width: 100%;
     position: fixed;
     top: 0;
@@ -175,4 +179,77 @@ nav a:hover:before{
 @media (max-width: 768px) {
     .titulo-seccion { font-size: 50px; }
     .contenedor-scroll img { width: 200px; height: 300px; }
+}
+
+/* --- BOTÓN HAMBURGUESA (oculto en desktop) --- */
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 0;
+}
+
+.hamburguesa span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #16151b;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación a "X" cuando está activo */
+.hamburguesa.active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+.hamburguesa.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburguesa.active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* --- RESPONSIVE: TABLET Y CELULAR --- */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 40px;
+    }
+
+    .hamburguesa {
+        display: flex;
+    }
+
+    .links {
+        flex: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        box-shadow: -4px 0 15px rgba(0,0,0,0.15);
+        transition: right 0.35s ease;
+        z-index: 1050;
+    }
+
+    .links.active {
+        right: 0;
+    }
+
+    .links a {
+        margin: 0;
+        font-size: 18px;
+    }
 }

@@ -39,3 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("Slider funcionando con", slides.length, "banners.");
 });
+
+const btnMenu = document.getElementById('btnMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    btnMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      btnMenu.classList.toggle('active');
+    });
+
+    // Cierra el menú al tocar un link (útil en mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        btnMenu.classList.remove('active');
+      });
+    });

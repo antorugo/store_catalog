@@ -36,6 +36,7 @@
 .producto-card {
     text-align: center;
     width: 200px;
+    position: relative; 
 }
 
 /* Recuadro de Imagen */
@@ -46,6 +47,7 @@
     margin-bottom: 15px;
     position: relative;
     background-color: #f9f9f9;
+     overflow: hidden;
 }
 
 .img-placeholder img {
@@ -153,9 +155,65 @@
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
     .ofertas-container {
-        gap: 30px;
+        gap: 15px;                      /* antes 30px, muy ancho para mobile */
+        padding: 0 10px 40px 10px;         /*  el último valor (40px) es el que separa del final */
+        justify-content: space-between; /* o "center", ver nota abajo */
     }
-    .color-dots {
-        right: 10px;
+
+    .producto-card {
+        width: calc(50% - 8px);   /* 2 por fila, descontando la mitad del gap */
+    }
+
+    .img-placeholder {
+        height: 220px;   /* un poco más bajo, ya que la card es más angosta */
+    }
+
+    .producto-card h2 {
+        font-size: 0.95rem;
+    }
+
+    .producto-card p {
+        font-size: 1.2rem;
+    }
+
+    .producto-card .btn-whatsapp {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+    }
+
+  .color-dots {
+        right: 10px;     /* en vez de -35px, quedan dentro de la imagen */
+        top: 10px;
+        gap: 8px;
+    }
+
+    .color-dot {
+        width: 18px;     /* un poco más chicos para que no tapen tanto */
+        height: 18px;
+    }
+
+    .ofertas-barra {
+        height: 60px;   /* antes 120px */
+    }
+
+    .barra-texto-scroll {
+        gap: 30px;       /* antes 60px */
+    }
+
+    .barra-texto-scroll span {
+        font-size: 1.1rem;    /* antes 2rem */
+        letter-spacing: 3px;  /* antes 6px */
+    }
+}
+
+@media (max-width: 480px) {
+    .producto-card {
+        width: calc(50% - 6px);   /* gap más chico en pantallas muy angostas */
+    }
+    .ofertas-container {
+        gap: 10px;
+    }
+    .img-placeholder {
+        height: 180px;
     }
 }
